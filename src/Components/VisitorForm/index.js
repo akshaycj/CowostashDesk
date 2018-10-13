@@ -79,6 +79,11 @@ export default class extends Component {
               </div>
             }
           />
+          <Select style={{ marginTop: 10, width: "100%" }}>
+            <Option value="Below 18">Below 18</Option>
+            <Option value="18-25">18-25</Option>
+            <Option value="25-35">25-35</Option>
+          </Select>
         </div>
       </div>
     );
