@@ -17,8 +17,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route path="/" component={Digit} />
-            <Route path="/home" component={Home} />
+            <Route path="/" exact component={Digit} />
+            <Route path="/home" exact component={Home} />
           </Switch>
         </BrowserRouter>
       </div>
