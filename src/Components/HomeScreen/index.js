@@ -15,7 +15,11 @@ export default class extends Component {
               Select your purpose of visit
             </div>
             <div style={{ display: "flex" }}>
-              <div className="homeS-inner">Visitor</div>
+              <div className="homeS-inner">
+                <Link to="/visitor" style={{ color: "white" }}>
+                  Visitor
+                </Link>
+              </div>
               <div className="homeS-inner">Checkin</div>
             </div>
             <div style={{ fontSize: 26, marginTop: 35, cursor: "pointer" }}>
