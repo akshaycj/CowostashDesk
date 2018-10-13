@@ -4,6 +4,7 @@ import "./App.css";
 import Digit from "./Components/DigitLogin";
 import Home from "./Components/HomeScreen";
 import Visitor from "./Components/VisitorDetailsForm";
+import Form from "./Components/VisitorForm";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
+            <Route path="/form" component={Form} />
             <Route path="/visitor" exact component={Visitor} />
             <Route path="/" exact component={Digit} />
             <Route path="/home" exact component={Home} />

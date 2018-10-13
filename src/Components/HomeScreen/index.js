@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import logo from "../../Res/logo.svg";
 import qr from "../../Res/qr.png";
+import { Link } from "react-router-dom";
 
 export default class extends Component {
   render() {
@@ -16,7 +17,7 @@ export default class extends Component {
             </div>
             <div style={{ display: "flex" }}>
               <div className="homeS-inner">
-                <Link to="/visitor" style={{ color: "white" }}>
+                <Link to="/visitor" style={{ color: "rgba(0,0,0,0.65)" }}>
                   Visitor
                 </Link>
               </div>
