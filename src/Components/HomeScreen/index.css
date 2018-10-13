@@ -1,7 +1,7 @@
 .homeS-main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 95vh;
 }
@@ -16,14 +16,14 @@
   font-size: 32px;
   height: 150px;
   background-color: white;
-  margin-top: 15px;
+  margin: 30px;
   border: solid 1px #ccc;
   box-shadow: 0 0 10px #ccc;
   cursor: pointer;
 }
 
 .homeS-middle {
-  margin-top: -200px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
