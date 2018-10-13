@@ -65,7 +65,10 @@ export default class extends Component {
                 ))}
               </Select>
             </div>
-            <div className="visitor-bottom-button">
+            <div
+              className="visitor-bottom-button"
+              style={{ marginRight: 20, marginLeft: "auto" }}
+            >
               <Link to="/form" style={{ color: "white" }}>
                 Next >
               </Link>

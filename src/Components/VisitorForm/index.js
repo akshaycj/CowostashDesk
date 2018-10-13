@@ -105,6 +105,25 @@ export default class extends Component {
               <Checkbox>Prefer not to say</Checkbox>
             </div>
           </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: 20,
+              marginLeft: 10,
+              textAlign: "left",
+              width: "100%"
+            }}
+          >
+            How was your experience?
+            <Rate style={{ marginTop: 3 }} />
+          </div>
+          <div
+            className="visitor-bottom-button"
+            style={{ alignSelf: "center", marginTop: 25 }}
+          >
+            Done
+          </div>
         </div>
       </div>
     );
