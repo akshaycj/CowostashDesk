@@ -16,17 +16,26 @@ export default class extends Component {
     };
   }
 
+  componentDidMount;
+
   onDigit = e => {
     this.setState({ code: e.target.value });
   };
 
   onConnect = () => {
+    const code = localStorage.getItem("code");
+
+    code == this.state.code ? this.onOld() : this.onNew();
+  };
+
+  onNew = () => {
     var data = {
       device_session: {
         code: this.state.code
       }
     };
-    console.log("data", JSON.stringify(data));
+
+    console.log("New");
 
     fetch(url, {
       method: "POST",
@@ -43,6 +52,52 @@ export default class extends Component {
       })
       .then(data => {
         if (data) {
+          console.log("data", data);
+          localStorage.setItem("code", this.state.code);
+          localStorage.setItem("auth_token", data.auth_token);
+          localStorage.setItem("company_id", data.company_id);
+          localStorage.setItem("device_id", data.device_id);
+          localStorage.setItem("token", data.token);
+          message.success(data.message);
+          this.setState({ redirect: true });
+        }
+      })
+      .catch(error => {
+        message.error("Error", error.response);
+      });
+  };
+
+  onOld = () => {
+    console.log("Old");
+
+    var data = {
+      device_session: {
+        auth_token: localStorage.getItem("token"),
+        code: this.state.code
+      }
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => {
+        console.log("response", res);
+
+        return res.json();
+      })
+      .then(data => {
+        if (data) {
+          console.log("data", data);
+          localStorage.setItem("code", this.state.code);
+          localStorage.setItem("auth_token", data.auth_token);
+
+          localStorage.setItem("device_id", data.device_id);
+
           message.success(data.message);
           this.setState({ redirect: true });
         }
